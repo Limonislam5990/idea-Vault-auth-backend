@@ -21,10 +21,10 @@ const client = new MongoClient(uri, {
   }
 });
 
-async function run() {
-  try {
-    await client.connect();
-    console.log("Successfully connected to MongoDB cluster instance.");
+// async function run() {
+ // try {
+ //   await client.connect();
+   // console.log("Successfully connected to MongoDB cluster instance.");
     
     const db = client.db("ideaVaultDB");
     const ideasCollection = db.collection("ideas");
@@ -108,11 +108,11 @@ async function run() {
       res.send(result);
     });
 
-  } catch (error) {
-    console.error("MongoDB connection breakdown:", error);
-  }
-}
-run().catch(console.dir);
+ // } catch (error) {
+ //   console.error("MongoDB connection breakdown:", error);
+ // }
+//}
+//run().catch(console.dir);
 
 app.get('/', (req, res) => {
   res.send('IdeaVault server is running...');
